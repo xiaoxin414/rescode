@@ -2,7 +2,7 @@ def username = 'xiaoxin'
 
 node {
     stage('build-using-scm'){
-     echo 'Hello Mr. ${username}'
+     echo "Running ${env.BUILD_ID} on ${env.JENKINS_URL}"
     }
     
     stage('test-using-scm'){
