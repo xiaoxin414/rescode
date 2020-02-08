@@ -35,3 +35,5 @@ def main()
 		}
 	}
 }
+
+main()
