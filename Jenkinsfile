@@ -1,13 +1,37 @@
-pipeline {
-    agent any
-    parameters {
-        string(name: 'Hi', defaultValue: 'Hello', description: 'How should I greet the world?')
-    }
-    stages {
-        stage('Example') {
-            steps {
-                echo "${params.Hi} World!"
-            }
-        }
-    }
+def kw()
+{
+	echo "process kw"
+}
+
+def coverity()
+{
+	echo "process coverity"
+}
+
+def deploy()
+{
+	echo "process deploy" 
+}
+
+def build()
+{
+	echo "build"
+}
+
+def main()
+{
+	node("Test"){
+		stage('kw'){
+			kw()
+		}
+		stage('coverity'){
+			coverity()
+		}
+		stage('build'){
+			build()
+		}
+		stage('deploy'){
+			deploy()
+		}
+	}
 }
